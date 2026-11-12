@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
   end
     context "email" do
     it { should validate_presence_of :email }
-    it { should validate_uniqueness_of :email }
+    it { should validate_uniqueness_of(:email).case_insensitive }
     it { should_not allow_value("text").for(:email) }
     it { should allow_value("a@b.com").for(:email) }
   end
