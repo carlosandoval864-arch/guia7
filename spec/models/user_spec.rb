@@ -7,4 +7,8 @@ RSpec.describe User, type: :model do
     it { should_not allow_value("123123").for(:name) }
     it { should allow_value("abcd").for(:name) }
   end
+  context "Password" do
+    it { should validate_presence_of :password }
+    it { should validate_length_of(:password).is_equal_to(8) }
+  end
 end 
