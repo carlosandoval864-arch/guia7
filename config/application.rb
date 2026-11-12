@@ -46,8 +46,6 @@ module AppMysql
         controller_specs: false,
         request_specs: false
     end
-  end
-end
 
     # Don't generate system test files.
     config.generators.system_tests = nil
